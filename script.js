@@ -29,9 +29,12 @@ function addDeleteBtn() {
     btnDelete.className = "btn-delete";
 
     btnDelete.addEventListener("click", (e)=>{
-       if(empty == ""){
+      const item = e.target.parentElement;
+      ul.removeChild(item)
+      const items = document.querySelectorAll("li")
+       if(items.length === 0){
         empty.style.display = "flex";
        } 
-       /* Terminar código */
     });
+    return btnDelete
 };
